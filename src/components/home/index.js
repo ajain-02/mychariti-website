@@ -135,15 +135,7 @@ const Home = () => {
             </SectionText>
           </Section>
         </Content>
-        <Footer style={{
-          background: '#fafafa',
-          textAlign: 'center',
-          padding: '0.5em 1em',
-          fontSize: '0.8em',
-          lineHight: '0.8em',
-        }}>
-          CharityBase 2019 - created open source by <a href='https://worthwhile.app'>worthwhile.app</a>
-        </Footer>
+     
       </OffsetLayout>
     </Layout>
   )

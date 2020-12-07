@@ -54,7 +54,7 @@ const SideBar = () => {
         <NavMenu
           chcIds={chcIds}
         />
-        <Divider />
+        {/* <Divider />
         <div
           style={{
             padding: '0 1em',
@@ -69,7 +69,7 @@ const SideBar = () => {
               fill='rgba(255,255,255,.8)'
             />
           </a>
-        </div>
+        </div> */}
       </Sider>
     </Fragment>
   )
