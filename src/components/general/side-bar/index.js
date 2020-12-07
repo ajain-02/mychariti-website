@@ -45,7 +45,7 @@ const SideBar = () => {
             textAlign: 'center',
           }}
         >
-          <HomeLink to='/'>MiChariti</HomeLink>
+          <HomeLink to='/'>MyChariti</HomeLink>
           <LogInOrOut
             renderLoggedInText={name => <p>Logged in as {name}</p>}
             renderLoggedOutText={name => null}
