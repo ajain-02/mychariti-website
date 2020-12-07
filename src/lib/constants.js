@@ -1,6 +1,6 @@
 const domain = 'https://charitybase.uk'
 
-const isProduction = process.env.NODE_ENV === 'production'
+const isProduction = process.env.NODE_ENV !== 'production'
 
 const charityBaseGqlApiUri = isProduction ? `${domain}/api/graphql` : '/api/graphql'
 
@@ -8,10 +8,11 @@ const charityBaseGqlAuthUri = isProduction ? `${domain}/auth/graphql` : '/auth/g
 
 const charityBaseApiUri = isProduction ? `${domain}/api` : '/api'
 
-const charityBaseApiKey = 'my-charity-base-api-key'
+const charityBaseApiKey = 'de797aaa-87f0-4681-97ab-3919e80b4cca'
 
 const auth0Config = {
   audience: 'https://charitybase.uk/api',
+  
   domain: 'charity-base.eu.auth0.com',
   clientID: 'my-auth0-client-id',
   redirectUri: isProduction ? domain : 'http://localhost:3000',

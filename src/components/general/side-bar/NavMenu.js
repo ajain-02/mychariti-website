@@ -90,7 +90,7 @@ const NavMenu = ({ chcIds }) => {
           </Menu.SubMenu>
         ))}
       </Menu.SubMenu>
-      <Menu.SubMenu
+      {/* <Menu.SubMenu
         key='submenu_api'
         title='API'
       >
@@ -141,8 +141,8 @@ const NavMenu = ({ chcIds }) => {
             <Icon type='link' style={{ marginLeft: '0.5em' }} />
           </a>
         </Menu.Item>
-      </Menu.SubMenu>
-      <Menu.SubMenu
+      </Menu.SubMenu> */}
+      {/* <Menu.SubMenu
         key='submenu_about'
         title='About'
       >
@@ -250,7 +250,7 @@ const NavMenu = ({ chcIds }) => {
             Licence
           </NavLink>
         </Menu.Item>
-      </Menu.SubMenu>
+      </Menu.SubMenu> */}
     </Menu>
   )
 }

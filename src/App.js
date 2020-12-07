@@ -14,6 +14,7 @@ const client = new ApolloClient({
   request: operation => {
     const { user } = auth
     operation.setContext({
+      
       headers: {
         Authorization: `Apikey ${charityBaseApiKey}`,
         UserId: user ? user.sub : undefined,

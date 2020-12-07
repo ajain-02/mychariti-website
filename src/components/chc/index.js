@@ -118,7 +118,10 @@ class Charities extends Component {
         variables={gqlVars}
       >
         {({ loading, error, data, client }) => {
-          if (error) return 'err oops'
+          if (error){
+            console.log(error)
+            return 'err oops'
+          } 
           const asyncFilters = data && data.CHC ? data.CHC.getFilters : [] //todo: add sync filters
           const filtersList = [
             ...asyncFilters,
@@ -126,7 +129,7 @@ class Charities extends Component {
           ].sort((a, b) => a.id.localeCompare(b.id))
           return (
             <CharitiesLayout
-              // filtersLoading={loading} add this prop
+              filtersLoading={loading} add this prop
               filtersList={filtersList}
               filtersObj={filtersObj}
               onAddFilter={this.onAddFilter(filtersList, client)}

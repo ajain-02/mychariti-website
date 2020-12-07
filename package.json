@@ -30,7 +30,7 @@
     "supercluster": "^4.1.1"
   },
   "scripts": {
-    "start": "export SASS_PATH=./node_modules && react-scripts start",
+    "start": " react-scripts start",
     "build": "export SASS_PATH=./node_modules && react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
@@ -45,3 +45,4 @@
     "not op_mini all"
   ]
 }
+
