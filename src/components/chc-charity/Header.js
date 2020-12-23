@@ -13,6 +13,8 @@ const HeaderTitle = styled(Title)`
 
 const Header = ({ loading, names }) => {
   const name = names ? names.reduce((agg, x) => (x.primary ? x.value : agg), null) : null
+
+  console.log(name)
   if (!loading && !name) return null
   return (
     <div style={{

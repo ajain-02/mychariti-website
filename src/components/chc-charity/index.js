@@ -23,6 +23,8 @@ const Charity = ({ id }) => {
         {({ loading, error, data }) => {
           if (error) return 'oops err'
           const charity = (data && data.CHC && data.CHC.getCharities.list[0]) || null
+
+
           return (
             <ContentLayout>
               <Header

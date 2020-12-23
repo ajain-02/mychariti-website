@@ -5,6 +5,7 @@ import { Card, Typography } from 'antd'
 const { Paragraph } = Typography
 
 const Contact = ({ contact }) => {
+
   return (
     <Card title='Contact' bordered={false} style={{ marginBottom: '2em' }}>
       {contact ? (
