@@ -13,6 +13,7 @@
     "http-proxy-middleware": "^0.19.1",
     "jwt-decode": "^2.2.0",
     "leaflet": "^1.4.0",
+    "needle": "^2.5.2",
     "ngeohash": "^0.6.0",
     "node-sass": "^4.11.0",
     "numeral": "^2.0.6",

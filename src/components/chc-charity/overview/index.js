@@ -43,7 +43,6 @@ const CharityOverview = ({
 }) => {
   const href = cleanUrl(website);
 
-
   const name = names
     ? names.reduce((agg, x) => (x.primary ? x.value : agg), null)
     : null;
@@ -65,6 +64,8 @@ const CharityOverview = ({
 
   return (
     <ResponsiveScroll style={{ backgroundColor: "#fafafa" }}>
+      <img src={"https://unavatar.now.sh/twitter/"+twitterName} width="100" />
+
       <Names names={names} />
       <OrgIds orgIds={orgIds} />
       <Registrations registrations={registrations} />
@@ -211,7 +212,6 @@ const CharityOverview = ({
           containerTagName="div"
           protocol=""
           injectScript
-     
         />
       </Row>
     </ResponsiveScroll>

@@ -31,6 +31,7 @@ const Charity = ({ id }) => {
                 loading={loading}
                 names={charity ? charity.names : []}
               />
+
               <Content style={{
                 background: '#fff',
                 margin: '0 0 0 0',
@@ -39,6 +40,7 @@ const Charity = ({ id }) => {
                 position: 'relative',
                 height: '100%',
               }}>
+
                 <CharityContentRouter
                   charity={charity}
                   id={id}
