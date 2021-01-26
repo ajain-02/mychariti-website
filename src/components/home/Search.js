@@ -12,25 +12,20 @@ const SearchContainer = styled.div`
   box-sizing: border-box;
   padding: 0 0.5em;
   width: 100%;
+  border-radius:30px
+
   transition: padding 0.2s ease-out;
-  ${({ fixed }) => fixed ? `
-    padding: 0;
-    box-shadow: 0 0 1em;
-  ` : `
+
     @media (min-width: 992px) {
       padding: 0 20%;
     }
-  `}
 `
 
 const Search = ({ client }, { router }) => {
   const [fixed, setFixed] = useState(false)
   return (
-    <Affix
-      onChange={fixed => setFixed(fixed)}
-    >
+
       <SearchContainer
-        fixed={fixed}
       >
         <CharitiesSearch
           onAddFilter={item => {
@@ -42,7 +37,6 @@ const Search = ({ client }, { router }) => {
           }}
         />
       </SearchContainer>
-    </Affix>
   )
 }
 Search.propTypes = {

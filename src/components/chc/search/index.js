@@ -13,6 +13,8 @@ class CharitiesSearch extends Component {
   render() {
     return (
       <CharityBaseSearch
+
+   
         label='Search by charity, funder, cause, area...'
         onSelect={this.onSelect}
         mapItem={mapItem}

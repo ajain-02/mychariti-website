@@ -5,6 +5,7 @@ import { Col, Layout, Icon, Row, Typography } from 'antd'
 import SideBar from '../general/side-bar'
 import { graphiql, income } from './images'
 import Search from './Search'
+import FullPageSearch from './FullPageSearch'
 
 const {
   Content,
@@ -140,7 +141,16 @@ const Home = () => {
     </Layout>
   )
 }
+
+
+const Home1 = () => {
+  return (
+    <Layout>
+    <FullPageSearch/>
+    </Layout>
+  )
+}
 Home.propTypes = {
 }
 
-export default Home
+export default Home1
