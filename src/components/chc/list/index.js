@@ -3,13 +3,14 @@ import styled from "styled-components";
 import PropTypes from "prop-types";
 import numeral from "numeral";
 import { Link } from "react-router-dom";
-import { Button, List } from "antd";
+import { Avatar, Button, List } from "antd";
 import { Query } from "react-apollo";
 import { LIST_CHARITIES } from "../../../lib/gql";
 import { CenteredContent, ResponsiveScroll } from "../../general/Layout";
 import ListHeader from "./ListHeader";
 import file from "../../../utils/file.json";
 import getProfilePic from './getProfilePic'
+import CharityItem from "./CharityItem";
 const MAX_LIST_LENGTH = 500;
 
 const IncomeIcon = ({ income ,id}) => {
@@ -161,6 +162,7 @@ const CharitiesList = ({ onHover, filtersObj }) => {
                   }
                   locale={{ emptyText: "No Charities Found" }}
                   dataSource={data.CHC ? data.CHC.getCharities.list : []}
+                  bordered
                   renderItem={({ id, names, activities, geo, finances }) => (
                     <List.Item
                       actions={
@@ -174,6 +176,12 @@ const CharitiesList = ({ onHover, filtersObj }) => {
                       onMouseLeave={() => onHover({})}
                     >
                       <List.Item.Meta
+
+// avatar={
+//   <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
+// }
+// title={<a href="https://ant.design">{"dfs"}</a>}
+// description="Ant Design, a design language for background applications, is refined by Ant UED Team"
                         title={
                           <Link to={`/chc/${id}`}>
                             {names &&
@@ -190,6 +198,7 @@ const CharitiesList = ({ onHover, filtersObj }) => {
 
                               id={id}
                             />
+
                           </Link>
                         }
                         description={
@@ -203,6 +212,8 @@ const CharitiesList = ({ onHover, filtersObj }) => {
                         }
                       />
                       {activities && `${activities.slice(0, 120)}...`}
+
+                      {/* <CharityItem/> */}
                     </List.Item>
                   )}
                 />
