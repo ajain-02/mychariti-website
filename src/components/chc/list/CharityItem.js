@@ -1,67 +1,25 @@
 import React from "react";
+import { Layout } from "antd";
 
-export default function CharityItem() {
+const { Header, Footer, Sider, Content } = Layout;
+
+export default function CharityItem(props) {
   return (
-    <div
-      style={{
-        display: "flex",
-      }}
-    >
-      <div
-        style={{
-          flex: 0.1,
-        }}
-      >
-        LOGO
-      </div>
-      <div
-        style={{
-            display: "flex",
-            flexDirection: "row",
-            justifyContent:"space-around",
-            height: "250px"
+    <Layout>
+      <Sider width={100} style={{ backgroundColor: "red" }}>fdsf</Sider>
 
-        }}
-      >
-        <div
-         style={{
-            flex: 0.1,
-          }}
-        >
-          nAME
-        </div>
-        <div
-         
-        >
-          REVENUE
-        </div>
-        <div
-         
-        >
-          RANK
-        </div>
-      </div>
-      {/* <div
-        style={{
-          display: "flex",
-        }}
-      >
-        INDICATOR
-      </div>{" "}
-      <div
-        style={{
-          display: "flex",
-        }}
-      >
-        DESCRIPTION
-      </div>
-      <div
-        style={{
-          display: "flex",
-        }}
-      >
-        TAGS
-      </div> */}
-    </div>
+      <Layout>
+        <Layout>
+        <Sider  style={{ backgroundColor: "blue" }}>{props.name}</Sider>
+
+          <Header style={{ backgroundColor: "green" }}>{props.revenue}</Header>
+
+        </Layout>
+        <Footer>{props.description}</Footer>
+      </Layout>
+        <Sider width={100} style={{ backgroundColor: "red" }}>
+         {props.rank}
+        </Sider>
+    </Layout>
   );
 }

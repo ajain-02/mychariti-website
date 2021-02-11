@@ -9,12 +9,11 @@ import { LIST_CHARITIES } from "../../../lib/gql";
 import { CenteredContent, ResponsiveScroll } from "../../general/Layout";
 import ListHeader from "./ListHeader";
 import file from "../../../utils/file.json";
-import getProfilePic from './getProfilePic'
+import getProfilePic from "./getProfilePic";
 import CharityItem from "./CharityItem";
 const MAX_LIST_LENGTH = 500;
 
-const IncomeIcon = ({ income ,id}) => {
-
+const IncomeIcon = ({ income, id }) => {
   let charitySocial = file.find((obj) => obj["Charity ID"] === id);
   let twitterName = "";
 
@@ -22,16 +21,18 @@ const IncomeIcon = ({ income ,id}) => {
     if ("Twitter" in charitySocial) {
       twitterName = file.find((obj) => obj["Charity ID"] === id)["Twitter"];
     }
-
-
   }
 
-  getProfilePic()
-// console.log(id,twitterName,)
+  getProfilePic();
+  // console.log(id,twitterName,)
 
   return (
     <div>
-      <img src={"https://unavatar.now.sh/twitter/"+twitterName} width="100" height="50" />
+      <img
+        src={"https://unavatar.now.sh/twitter/" + twitterName}
+        width="100"
+        height="50"
+      />
     </div>
   );
 };
@@ -63,7 +64,7 @@ const IncomeLabel = styled.span`
   letter-spacing: 1px;
 `;
 
-const Income = ({ income,id }) => (
+const Income = ({ income, id }) => (
   <div>
     <IncomeLabel>
       {numeral(income).format("($0a)").replace("$", "£")}
@@ -175,13 +176,12 @@ const CharitiesList = ({ onHover, filtersObj }) => {
                       onMouseEnter={() => onHover(geo)}
                       onMouseLeave={() => onHover({})}
                     >
-                      <List.Item.Meta
-
-// avatar={
-//   <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
-// }
-// title={<a href="https://ant.design">{"dfs"}</a>}
-// description="Ant Design, a design language for background applications, is refined by Ant UED Team"
+                      {/* <List.Item.Meta
+                        // avatar={
+                        //   <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
+                        // }
+                        // title={<a href="https://ant.design">{"dfs"}</a>}
+                        // description="Ant Design, a design language for background applications, is refined by Ant UED Team"
                         title={
                           <Link to={`/chc/${id}`}>
                             {names &&
@@ -195,10 +195,8 @@ const CharitiesList = ({ onHover, filtersObj }) => {
                                   ? finances[0].income
                                   : null
                               }
-
                               id={id}
                             />
-
                           </Link>
                         }
                         description={
@@ -211,9 +209,38 @@ const CharitiesList = ({ onHover, filtersObj }) => {
                             .join(", ")
                         }
                       />
-                      {activities && `${activities.slice(0, 120)}...`}
-
-                      {/* <CharityItem/> */}
+                      {activities && `${activities.slice(0, 120)}...`} */}
+                      <Link to={`/chc/${id}`}>
+                        <CharityItem
+                          name={
+                            names &&
+                            names.reduce(
+                              (agg, x) => (x.primary ? x.value : agg),
+                              null
+                            )
+                          }
+                          description={
+                            names &&
+                            names
+                              .reduce(
+                                (agg, x) =>
+                                  x.primary ? agg : [...agg, x.value],
+                                []
+                              )
+                              .join(", ")
+                          }
+                          revenue={
+                            <Income
+                              income={
+                                finances && finances.length > 0
+                                  ? finances[0].income
+                                  : null
+                              }
+                              id={id}
+                            />
+                          }
+                        />
+                      </Link>
                     </List.Item>
                   )}
                 />
